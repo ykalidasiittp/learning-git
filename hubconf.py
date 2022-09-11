@@ -1,8 +1,15 @@
 dependencies = ['torch']
 
-def kali1():
-    print ('kali')
-    return
+import numpy as np
+
+def load_data():
+
+    print ('loading data...')
+    
+    x = np.linspace(-math.pi, math.pi, 2000)
+    y = np.sin(x)
+        
+    return x, y
     
     
 def kali2():
