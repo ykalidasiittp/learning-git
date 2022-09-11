@@ -6,5 +6,5 @@ def kali1():
     
     
 def kali2():
-    print 'kali 2'
+    print ('kali 2')
     return
