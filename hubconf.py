@@ -17,7 +17,7 @@ def load_data():
     return x, y
     
     
-def polyfit_autograd():
+def polyfit_autograd(x,y):
 
     a = torch.randn((), device=device, dtype=dtype, requires_grad=True)
     b = torch.randn((), device=device, dtype=dtype, requires_grad=True)
