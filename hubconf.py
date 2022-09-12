@@ -125,11 +125,11 @@ def _test(dataloader, model, loss_fn):
     correct /= size
     print(f"Test Error: \n Accuracy: {(100*correct):>0.1f}%, Avg loss: {test_loss:>8f} \n")
     
-def train(train_dataloader, test_dataloader, mymodel, loss_fn, optimizer, epochs=5):
+def train(train_dataloader, test_dataloader, model1, loss_fn1, optimizer1, epochs=5):
     for t in range(epochs):
         print(f"Epoch {t+1}\n-------------------------------")
-        train(train_dataloader, mymodel, loss_fn, optimizer)
-        test(test_dataloader, mymodel, loss_fn)
+        train(train_dataloader, model1, loss_fn1, optimizer1)
+        test(test_dataloader, model1, loss_fn1)
     print("Done!")
 
 def save_model(mypath="model.pth"):
