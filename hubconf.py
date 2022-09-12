@@ -128,8 +128,8 @@ def _test(dataloader, model, loss_fn):
 def train(train_dataloader, test_dataloader, model1, loss_fn1, optimizer1, epochs=5):
     for t in range(epochs):
         print(f"Epoch {t+1}\n-------------------------------")
-        train(train_dataloader, model1, loss_fn1, optimizer1)
-        test(test_dataloader, model1, loss_fn1)
+        _train(train_dataloader, model1, loss_fn1, optimizer1)
+        _test(test_dataloader, model1, loss_fn1)
     print("Done!")
 
 def save_model(mypath="model.pth"):
