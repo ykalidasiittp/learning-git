@@ -41,9 +41,9 @@ class NeuralNetwork(nn.Module):
 
 #############################
 
-def get_lossfn_and_optimizer(model):
+def get_lossfn_and_optimizer(mymodel):
     loss_fn = nn.CrossEntropyLoss()
-    optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
+    optimizer = torch.optim.SGD(mymodel.parameters(), lr=1e-3)
     return loss_fn, optimizer
 
 
@@ -125,7 +125,7 @@ def _test(dataloader, model, loss_fn):
     correct /= size
     print(f"Test Error: \n Accuracy: {(100*correct):>0.1f}%, Avg loss: {test_loss:>8f} \n")
     
-def train(train_dataloader, test_dataloader, epochs=5):
+def train(train_dataloader, test_dataloader, epochs=5, model, loss_fn, optimizer):
     for t in range(epochs):
         print(f"Epoch {t+1}\n-------------------------------")
         train(train_dataloader, model, loss_fn, optimizer)
