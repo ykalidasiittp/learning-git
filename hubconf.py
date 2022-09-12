@@ -8,9 +8,6 @@ from torchvision.transforms import ToTensor
 device = "cuda" if torch.cuda.is_available() else "cpu"
 print(f"Using {device} device")
 
-loss_fn = nn.CrossEntropyLoss()
-optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
-
 classes = [
     "T-shirt/top",
     "Trouser",
@@ -43,6 +40,12 @@ class NeuralNetwork(nn.Module):
         return logits
 
 #############################
+
+def get_lossfn_and_optimizer(model):
+    loss_fn = nn.CrossEntropyLoss()
+    optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
+    return loss_fn, optimizer
+
 
 def load_data():
 
